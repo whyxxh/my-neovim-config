@@ -5,6 +5,21 @@ return {
         config = function()
             -- Telescope configuration
             require('telescope').setup({
+                defaults = {
+                    color_devicons = false,
+                    disable_devicons = true,
+                },
+                pickers = {
+                    find_files = {
+                        theme = "dropdown",
+                    },
+                    live_grep = {
+                        theme = "dropdown",
+                    },
+                    buffers = {
+                        theme = "dropdown",
+                    },
+                },
                 extensions = {
                     fzf = {
                         fuzzy = true,                    -- Enable fuzzy matching

@@ -27,6 +27,9 @@ return {
             lspconfig.clangd.setup{
                 capabilities = capabilities,
             }
+            lspconfig.pyright.setup{
+                capabilities = capabilities,
+            }
 
             local hover_opts = {
                 border = {

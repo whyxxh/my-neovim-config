@@ -23,7 +23,6 @@ vim.o.signcolumn = "no"
 
 vim.o.laststatus = 0
 
-vim.o.undofile = true 
+vim.o.undofile = true
 
 vim.o.scrolloff = 8
-

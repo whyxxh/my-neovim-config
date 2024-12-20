@@ -1,6 +1,9 @@
 return {
     {
         "nvim-neorg/neorg",
+        dependencies = {    
+            "3rd/image.nvim",
+        },
         version = "*",
         config = function()
             require("neorg").setup({
@@ -12,15 +15,11 @@ return {
                         }
                     }, -- Adds pretty icons to your documents
                     ["core.keybinds"] = {}, -- Adds default keybindings
-                    ["external.pandoc"] = {},
                     ["core.completion"] = {
                         config = {
                             engine = "nvim-cmp",
                         },
                     }, -- Enables support for completion plugins
-                    ["core.journal"] = {}, -- Enables support for the journal modul                    },
-                    ["core.autocommands"] = {},
-                    ["core.highlights"] = {},
                     ["core.integrations.treesitter"] = {},
                     ["core.neorgcmd"] = {},
                     ["core.latex.renderer"] = {},
@@ -43,11 +42,4 @@ return {
         branch = "neorg-plugin",
         config = true,
     },
-
-    {
-        "3rd/image.nvim",
-        opts = {}
-    },
-
-
 }
