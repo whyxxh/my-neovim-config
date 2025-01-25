@@ -14,6 +14,7 @@ return {
                             icon_preset = "diamond"
                         }
                     }, -- Adds pretty icons to your documents
+                    ["core.highlights"] = {},
                     ["core.keybinds"] = {}, -- Adds default keybindings
                     ["core.completion"] = {
                         config = {
@@ -21,6 +22,7 @@ return {
                         },
                     }, -- Enables support for completion plugins
                     ["core.integrations.treesitter"] = {},
+                    ["core.export"] = {},
                     ["core.neorgcmd"] = {},
                     ["core.latex.renderer"] = {},
                     ["core.dirman"] = { -- Manages Neorg workspaces

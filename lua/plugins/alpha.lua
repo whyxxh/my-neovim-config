@@ -19,14 +19,25 @@ return {
                 button.opts.hl = "AlphaButtons"
                 button.opts.hl_shortcut = "AlphaShortcut"
             end
+
             dashboard.section.header.opts.hl = "AlphaHeader"
             dashboard.section.buttons.opts.hl = "AlphaButtons"
             dashboard.section.footer.opts.hl = "AlphaFooter"
-            dashboard.opts.layout[1].val = 8
+
+            -- Adjust the layout to position the dashboard higher
+            dashboard.opts.layout = {
+                { type = "padding", val = 3 }, -- Adjust this value to control vertical spacing
+                dashboard.section.header,
+                { type = "padding", val = 2 },
+                dashboard.section.buttons,
+                { type = "padding", val = 1 },
+                dashboard.section.footer,
+            }
+
             return dashboard
         end,
         config = function(_, dashboard)
-            -- close Lazy and re-open when the dashboard is ready
+            -- Close Lazy and re-open when the dashboard is ready
             if vim.o.filetype == "lazy" then
                 vim.cmd.close()
                 vim.api.nvim_create_autocmd("User", {
@@ -56,7 +67,6 @@ return {
                     pcall(vim.cmd.AlphaRedraw)
                 end,
             })
-
         end,
     },
 }

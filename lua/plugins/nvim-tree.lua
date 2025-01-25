@@ -36,13 +36,13 @@ return {
                     symlink = "",
                     bookmark = "",
                     git = {
-                        unstaged = "",
-                        staged = "",
-                        unmerged = "",
-                        renamed = "",
-                        deleted = "",
-                        untracked = "",
-                        ignored = "",
+                        unstaged = "!",      -- Modified but not staged
+                        staged = "+",        -- Staged for commit
+                        unmerged = "✗",      -- Merge conflicts
+                        renamed = "➜",       -- Renamed files
+                        deleted = "✖",       -- Deleted files
+                        untracked = "?",     -- Untracked files
+                        ignored = "◌",       -- Ignored files
                     },
                     folder = {
                         default = "",

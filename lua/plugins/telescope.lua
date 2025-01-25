@@ -1,25 +1,26 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
+        dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim", "MunifTanjim/nui.nvim" },
         config = function()
             -- Telescope configuration
             require('telescope').setup({
                 defaults = {
                     color_devicons = false,
                     disable_devicons = true,
+                    mappings = {
+                        i = {
+                            ["<esc>"] = require('telescope.actions').close
+                        },
+                    },
+                    layout_config = {
+                        width = 0.7,
+                        height = 0.7,
+                    },
+                    prompt_prefix = "   ", -- Sets the magnifying glass icon
+                    selection_caret = "|> ", -- Sets the arrow icon for selected item
                 },
-                pickers = {
-                    find_files = {
-                        theme = "dropdown",
-                    },
-                    live_grep = {
-                        theme = "dropdown",
-                    },
-                    buffers = {
-                        theme = "dropdown",
-                    },
-                },
+                -- Extensions (fzf)
                 extensions = {
                     fzf = {
                         fuzzy = true,                    -- Enable fuzzy matching
@@ -37,13 +38,11 @@ return {
 
     {
         "nvim-telescope/telescope-ui-select.nvim",
-        -- This is your opts table
         config = function()
             require("telescope").setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {
-                        },
+                        require("telescope.themes").get_dropdown {},
                     }
                 }
             })
