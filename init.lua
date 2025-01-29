@@ -12,3 +12,4 @@ end, {desc = "Export Neorg files to PDF"})
 
 -- temporary
 vim.api.nvim_set_hl(0, "Function", { fg = "#83a598" , bold = false })
+vim.api.nvim_set_hl(0, "signcolumn", { bg = "#282828" , bold = false })
